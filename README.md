@@ -1,6 +1,7 @@
 # How to run
 ```
-make sure you select the proper benchmark file and function, located in index.js file
+make sure you select the proper benchmark file and function, located in index.js file.
+If you plan to run this repo on nodejs and skipping docker - make sure to run it with Nodejs v21
 
 1. git clone https://github.com/svidlak/groupby-benchmark.git
 2. cd groupby-benchmark
