@@ -1,7 +1,9 @@
 const fs = require('fs');
-const filePath = `${__dirname}/1k_birthdates.json`;
 
-const peoplesList = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+const BENCHMARK_FILE = '1k_birthdates.json';
+const SHOULD_LOG_GROUP_RESULTS = false;
+
+const peoplesList = JSON.parse(fs.readFileSync(`${__dirname}/${BENCHMARK_FILE}`, 'utf-8'));
 
 const groupByForLoop = () => {
     console.time('groupByForLoop');
@@ -87,7 +89,8 @@ const objectGroupBy = () => {
 }
 
 const logGroupsLength = (mapObject) => {
-    return
+    if(!SHOULD_LOG_GROUP_RESULTS) return;
+
     Object.keys(mapObject).forEach(key => {
         console.log(`${key}: ${mapObject[key].length}`);
     })
